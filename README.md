@@ -7,8 +7,8 @@ Los actividad ha sido realizada en grupo por los siguientes miembros:
 * Alberto Bayón Valtierra
 
 # Descripción de los ficheros
-* **ConsumoYEmisionesDeTurismos.py**: script que ejecuta el proceso de scraping y retorna un fichero .csv con la información correspondiente a la marca de coche que se haya seleccionado.
-* **ConsumoYEmisionesDeTurismos_marca_Jaguar.csv**: dataset resultante de haber seleccionado la marca de coche "Jaguar"
+* **data_coches.py**: script que ejecuta el proceso de scraping y retorna un fichero .csv con la información correspondiente a la marca de coche que se haya seleccionado.
+* **data_coches_marca_Jaguar.csv**: dataset resultante de haber seleccionado la marca de coche "Jaguar"
 * **Respuestas_Practica1.pdf**: PDF con las respuestas planteadas en la práctica
 
 El script se debe ejecutar de la siguiente manera:  
