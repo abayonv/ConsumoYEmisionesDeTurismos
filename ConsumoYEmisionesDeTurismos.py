@@ -71,7 +71,6 @@ for i in select_marca.find_all('option'):
     if (i.string==marca_seleccionada):
         codigo_marca=(i['value'])
         
-
 #Rellenar el payload
 payload["draw"] = "1"
 payload["columns[0][data]"] = "0"
@@ -120,7 +119,8 @@ payload["_token"] = csrf_token
 payload["campo"] = "listado"
 payload["ciclo"] = "wltp"
 
-# conjunto de filtros que se utiliza en la llamada
+# Conjunto de filtros que se utiliza en la llamada.
+# Añadimos el valor del "csrf_token" obtenido y el "codigo_marca" que se ha seleccionado
 payload["filtros"] = "_token="+csrf_token+"&tipo=marca-y-modelo&motorizacion=&categoria=&segmento=&marca="+codigo_marca+"&modelo=&datos_nedc_length=&datos_wltp_length="
 
 #Se realiza la llamada con la url que realiza la busqueda, las cookies, la cabecera y el payload
@@ -147,8 +147,7 @@ for i in range(len(json_data)):
     consumo_max=json_data[i][3]
     emisiones_min=json_data[i][4]
     emisiones_max=json_data[i][5]
-    
-    
+        
     # Dividimos la cadena de texto por donde hay ":", de manera que obtenemos 3 subcadenas
     # De las 3 subcadenas nos quedamos con la última: [2] que contiene el texto de la clasificación(' G">')
     clasificacion=clasificacion.split(':')[2]
@@ -165,8 +164,6 @@ print(df_coches)
 
 # Crea el archivo de datos en formato .csv
 df_coches.to_csv('data_coches.csv')
-
-###################### fin codigo añadido #################################################################
 
 
 # In[ ]:
